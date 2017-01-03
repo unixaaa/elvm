@@ -91,6 +91,7 @@ ELC_SRCS := \
 	pietasm.c \
 	pl.c \
 	py.c \
+	ps.c \
 	rb.c \
 	sed.c \
 	sh.c \
@@ -421,6 +422,10 @@ include target.mk
 TARGET := sqlite3
 RUNNER := tools/runsqlite3.sh
 TOOL := sqlite3
+include target.mk
+
+TARGET := ps
+RUNNER := gsnd -q -dBATCH --
 include target.mk
 
 test: $(TEST_RESULTS)
